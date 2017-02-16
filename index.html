@@ -6,9 +6,30 @@
   </head>
   <body>
     <h1>Simple Javascript Exercise</h1>
-    <button type="button" name="button">Add an image</button>
+    <button onclick="addImage()"
+      type="button"
+      name="button">
+      Add an image
+    </button>
+    <div id="imgHolder">
+    </div>
   </body>
   <script type="text/javascript">
+    function addImage(evt) {
+      var imgHolder = document.getElementById("imgHolder");
+      var newImg = document.createElement("img");
 
+      newImg.src = "http://placeimg.com/320/240/animals/sepia"
+      newImg.onclick = removeImg
+      imgHolder.appendChild(newImg);
+
+      return;
+    }
+
+    function removeImg(evt) {
+      evt.target.remove();
+
+      return;
+    }
   </script>
 </html>
